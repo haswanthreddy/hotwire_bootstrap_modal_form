@@ -1,0 +1,24 @@
+<%= turbo_frame_tag dom_id book do %>
+  <div>
+    <p>
+      <strong>Title:</strong>
+      <%= book.title %>
+    </p>
+    <p>
+      <strong>Author:</strong>
+      <%= book.author %>
+    </p>
+    <p>
+      <strong>Released:</strong>
+      <%= book.released %>
+    </p>
+    <p>
+      <strong>Note:</strong>
+      <%= book.note %>
+    </p>
+    <p>
+      <%= link_to 'Edit', edit_book_path(book), data: {turbo: true, turbo_frame: "modal"}, class: "btn btn-info", id: "edit_link_#{book.id}" %>
+    </p>
+  </div>
+  <hr/>
+<%end%>

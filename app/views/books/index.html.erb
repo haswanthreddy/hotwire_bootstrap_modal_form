@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+<h1>Books</h1>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="modalButton">
+  Launch demo modal
+</button>
+<hr/>
+<hr/>
+<%= turbo_stream_from "books" %>
+<%= turbo_frame_tag "books" do %>
+  <%= render @books %>
+<% end %>
+<%= link_to "New book", new_book_path %>
+<%= render "modal" %>
+<script>
+  // const myModal = document.getElementById('myModal')
+  // const myInput = document.getElementById('myInput')
+
+  // myModal.addEventListener('shown.bs.modal', () => {
+  //   myInput.focus()
+  // })
+
+  const button = document.getElementById('modalButton');
+  button.addEventListener('click', () => {
+    document.getElementById('edit_link_1').click();
+  })
+</script>
