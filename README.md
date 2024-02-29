@@ -1,24 +1,15 @@
-# README
+form in modal implemented for book#edit in books/index.html.erb
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+in books_controller in edit action
 
-Things you may want to cover:
+```
+  render turbo_stream: turbo_stream.replace("modal_form", partial: "books/form", locals: { book: @book })
+```
+this is rendering the form partial and in the turbo_frame whose id is modal_form and that id is inside modal body
 
-* Ruby version
+```
+  <div class="modal-body">
+    <%= turbo_frame_tag "modal_form" %>
+  </div>
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
