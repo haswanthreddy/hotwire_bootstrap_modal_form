@@ -1,4 +1,4 @@
-form in modal implemented for book#edit in books/index.html.erb
+Form in modal implemented for book#edit in books/index.html.erb
 
 in books_controller in edit action
 
